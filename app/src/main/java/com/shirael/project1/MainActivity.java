@@ -265,14 +265,31 @@ public class MainActivity extends Activity implements OnTouchListener {
 
 
 
-        for (int i = 0; i < paths[0].getPoints().size(); i++) {
+      /*  for (int i = 0; i < paths[0].getPoints().size(); i++) {
             polygon = Polygon.Builder().
         addVertex(new com.shirael.project1.Point(paths[0].getPoints().get(i).x, MainActivity.paths[0].getPoints().get(i).y)).build();
+        }*/
+
+
+
+
+       /* Polygon.Builder poly2 = new Polygon.Builder();
+
+
+        for (int i = 0; i < paths[0].getPoints().size(); i++) {
+            poly2.addVertex(new com.shirael.project1.Point(paths[0].getPoints().get(i).x, MainActivity.paths[0].getPoints().get(i).y) );
+
+            Polygon polygon2 = poly2.build();*/
+       Polygon.Builder poly2=new Polygon.Builder();
+
+        for (int i = 0; i < paths[0].getPoints().size(); i++)
+        {
+            poly2.addVertex((new com.shirael.project1.Point(paths[0].getPoints().get(i).x,paths[0].getPoints().get(i).y)));
         }
 
+          polygon=poly2.build();
 
-
-    }
+        }
 
 
 
@@ -285,26 +302,29 @@ public class MainActivity extends Activity implements OnTouchListener {
         width = bmpOriginal.getWidth();
         threshold = 127;
         Bitmap bmpBinary = Bitmap.createBitmap(bmpOriginal);
-//fun();
+fun();
 
         for (int x = 0; x < bmpOriginal.getWidth(); x++) {
             for (int y = 0; y < bmpOriginal.getHeight(); y++) {
                 com.shirael.project1.Point point=new com.shirael.project1.Point(x,y);
-                if(r.contains((int)point.x,(int) point.y)) {
+              /*  if(r.contains((int)point.x,(int) point.y)) {
                     Log.d(TAG, "Touch IN");
                     bmpBinary.setPixel(x, y, Color.rgb(255, 255, 255));
                 }
                 else {
                     Log.d(TAG, "Touch OUT");
                     bmpBinary.setPixel(x, y, Color.rgb(0, 0, 0));
-                }
+                }*/
 
-               /* if(polygon.contains(point))
+               if(polygon.contains(point))
                 {
                     bmpBinary.setPixel(x, y, Color.rgb(255, 255, 255));
                 }
                 else
-                    bmpBinary.setPixel(x, y, Color.rgb(0, 0, 0));*/
+                    bmpBinary.setPixel(x, y, Color.rgb(0, 0, 0));
+
+
+
 
             }
         }
