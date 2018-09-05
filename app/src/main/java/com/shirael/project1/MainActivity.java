@@ -148,6 +148,7 @@ public class MainActivity extends Activity implements OnTouchListener {
         Button button 	= (Button) findViewById(R.id.btn_crop);
         Button saveButton 	= (Button) findViewById(R.id.btn_save);
        Button discardButton 	= (Button) findViewById(R.id.btn_discard);
+       Button rotateButton=(Button)findViewById(R.id.btn_rotate) ;
 
         drawImageView = (ImageView) findViewById(R.id.DrawImageView);
         drawImageView.setOnTouchListener(this);
@@ -236,6 +237,28 @@ public class MainActivity extends Activity implements OnTouchListener {
             }
 
         });
+
+
+
+
+
+
+
+
+
+
+        rotateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawImageView.setRotation(drawImageView.getRotation() + 90);
+
+            }
+
+        });
+
+
+
+
     }
 
     @Override

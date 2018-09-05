@@ -27,22 +27,32 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_weight="0.48" />
+
     <TableRow
         android:id="@+id/tableRow1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_save"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save" />
 
         <Button
             android:id="@+id/btn_discard"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Discard" />
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/btn_rotate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rotate" />
 
     </TableRow>
 </LinearLayout>
